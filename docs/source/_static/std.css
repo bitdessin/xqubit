@@ -1,0 +1,55 @@
+.wy-table-responsive table td, .wy-table-responsive table th {
+    white-space: normal;
+}
+.wy-table-responsive table {
+    width: 100%;
+}
+
+h2 {
+    margin-top: 2em;
+}
+
+p, img, table {
+    margin-top: 1em;
+}
+
+
+table p {
+    margin: 0;
+}
+
+section p {
+    text-align: justify;
+    text-justify: inter-ideograph;
+}
+
+colgroup {
+    display: none;
+}
+
+code.file {
+    margin: 0px 3px;
+    padding: 2px 0px;
+    border: none;
+    border-bottom: 1px dashed #008E74;
+}
+
+.file .pre {
+    color: #008E74;
+    font-size: 1.1em;
+    padding: 0px 2px;
+}
+
+p > a:visited{
+    color: #2980b9;
+}
+
+dl.function > dd > p:first-child, dl.method + dd > p:first-child {
+    font-size: 1.1rem;
+    text-decoration: underline dashed #CCC;
+}
+
+dl.field-list > dt {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
