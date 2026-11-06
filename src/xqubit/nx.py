@@ -530,10 +530,9 @@ def _scan_network_params(x, s, k, resolution, min_size, n_iterations, mutual_knn
         for j in range(i + 1, len(scan_record["label"])):
             labels_i = scan_record["label"][i]
             labels_j = scan_record["label"][j]
-            mask = (labels_i != 0) & (labels_j != 0)
-            if np.sum(mask) > 1:
-                nmi_vals.append(normalized_mutual_info_score(labels_i[mask], labels_j[mask]))
-                ami_vals.append(adjusted_mutual_info_score(labels_i[mask], labels_j[mask]))
+            if labels_i.size > 1:
+                nmi_vals.append(normalized_mutual_info_score(labels_i, labels_j))
+                ami_vals.append(adjusted_mutual_info_score(labels_i, labels_j))
 
     s_abs = s if s <= 1.0 else np.percentile(x[np.triu_indices(x.shape[0], k=1)], s)
     gs_stats = {'s': s, 's_abs': s_abs, 'k': k, 'resolution': resolution}
